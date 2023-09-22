@@ -22,9 +22,9 @@ RUN conda install -c conda-forge r-repr
 RUN conda install -c conda-forge r-ggplot2
 
 # install Seurat
-RUN conda install -c bioconda r-seurat
+RUN conda install -c conda-forge r-seurat
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]
+ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
 
