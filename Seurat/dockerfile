@@ -23,6 +23,8 @@ RUN conda install -c conda-forge r-ggplot2
 
 # install Seurat
 RUN conda install -c conda-forge r-seurat
+RUN conda install -c conda-forge r-seuratobject
+
 
 EXPOSE 8888
 
