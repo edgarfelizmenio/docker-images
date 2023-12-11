@@ -7,6 +7,10 @@ USER root
 
 WORKDIR /workdir
 
+# install required packages
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y libopenblas-dev
+
 # install Jupyterlab
 RUN conda install -c conda-forge jupyterlab
 RUN conda install -c conda-forge nb_conda_kernels
@@ -20,11 +24,15 @@ RUN conda install -c conda-forge r-irkernel
 RUN conda install -c conda-forge r-irdisplay
 RUN conda install -c conda-forge r-repr
 RUN conda install -c conda-forge r-ggplot2
+RUN conda install -c conda-forge r-devtools
+RUN conda install -c conda-forge r-ape
+RUN conda install -c conda-forge r-hdf5r
 
 # install Seurat
 RUN conda install -c conda-forge r-seurat
 RUN conda install -c conda-forge r-seuratobject
-
+# RUN conda install -c conda-forge r-seuratdisk
+RUN conda install -c bioconda bioconductor-biomart
 
 EXPOSE 8888
 
