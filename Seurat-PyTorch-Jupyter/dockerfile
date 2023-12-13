@@ -5,7 +5,7 @@ LABEL maintainer="Edgar Felizmenio <edgarfelizmenio@gmail.com>"
 
 USER root
 
-WORKDIR /workdir
+WORKDIR /workspace
 
 # install required packages
 RUN apt-get update && apt-get -y upgrade
@@ -36,5 +36,5 @@ RUN conda install -c bioconda bioconductor-biomart
 
 EXPOSE 8888
 
-ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
+ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--no-browser"]
 
