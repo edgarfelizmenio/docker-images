@@ -7,6 +7,9 @@ USER root
 
 WORKDIR /workspace
 
+# install other dependencies
+RUN pip install matplotlib
+
 # install jupyter lab
 RUN pip install jupyterlab
 
