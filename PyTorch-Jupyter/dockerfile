@@ -8,7 +8,17 @@ USER root
 WORKDIR /workspace
 
 # install other dependencies
+
+# PyTorch Tutorials
 RUN pip install matplotlib
+RUN pip install pandas
+
+# GraphST
+RUN pip install scanpy
+RUN pip install scikit-learn
+RUN pip install scikit-misc
+RUN pip install POT
+
 
 # install jupyter lab
 RUN pip install jupyterlab
